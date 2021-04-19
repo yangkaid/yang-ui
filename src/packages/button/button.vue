@@ -3,6 +3,7 @@
     class="yang-button"
     :class="{ [`yang-button-${type}`]: true }"
     type="button"
+    size="large"
   >
     <slot></slot>
   </button>

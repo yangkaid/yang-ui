@@ -1,15 +1,15 @@
 <template>
     <div class="example">
-        <YButton></YButton>
+        <YButton type="info">提交</YButton>
     </div>
 </template>
 
 <script>
-import { Button } from "../packages/button/index";
+import  Button  from "../packages/button/button.vue";
     export default {
         name:'Example',
         components: {
-            YButton:Button
+            YButton: Button
 
         }
         
