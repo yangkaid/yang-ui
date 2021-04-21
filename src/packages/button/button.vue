@@ -1,9 +1,9 @@
 <template>
   <button
     class="yang-button"
-    :class="{ [`yang-button-${type}`]: true }"
+    :class="{ [`yang-button-${type}`]: true, [`yang-button-${size}`]:true }"
     type="button"
-    size="large"
+    size="default"
   >
     <slot></slot>
   </button>
