@@ -19,7 +19,6 @@ export default {
       let id = +new Date();
       notice.id = id;
       this.notices.push(notice);
-      console.log(notice);
       let duration = notice.duration;
       setTimeout(() => {
         this.remove(id);

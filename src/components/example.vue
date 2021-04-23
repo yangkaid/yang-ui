@@ -17,11 +17,10 @@ export default {
   mounted() {},
   methods: {
     addNotice() {
-      console.log(111);
       this.$notice({
         title: "我完成了",
         content: "我就是神",
-        duration: '5',
+        duration: '1',
       });
     },
   },

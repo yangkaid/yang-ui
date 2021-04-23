@@ -3,18 +3,22 @@ import Notice from './notice.vue'
 
 Notice.newInstance = (properties) => {
   let props = properties || {}
+  console.log(props);
   const Instance = new Vue({
     render(h) {
       return h(Notice, {
         props
       })
     }
-  })
+  });
+  console.log(Instance);
 
   const component = Instance.$mount()
+  //console.log(component);
   document.body.appendChild(component.$el)
 
   const notice = component.$children[0]
+  //console.log(notice);
 
   return {
     add(_notice) {
@@ -25,9 +29,10 @@ Notice.newInstance = (properties) => {
     }
   }
 }
+//console.log(Notice);
 let noticeInstance;
 const notice = function(_notice) {
-    noticeInstance = noticeInstance || Notice.newInstance()
+    noticeInstance = noticeInstance || Notice.newInstance(_notice)
     noticeInstance.add(_notice)
 
 }
