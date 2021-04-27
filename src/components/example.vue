@@ -1,18 +1,24 @@
 <template>
   <div class="example">
     <YButton type="success" @click.native="addNotice">提交</YButton>
+    <YInput :value="msg" @input="Listening"></YInput>
+    <p>{{msg}}</p>
   </div>
 </template>
 
 <script>
 import Button from "../packages/button/button.vue";
+import Input from "../packages/input/input";
 export default {
   name: "Example",
   components: {
     YButton: Button,
+    YInput: Input
   },
   data() {
-    return {};
+    return {
+      msg:''
+    };
   },
   mounted() {},
   methods: {
@@ -23,6 +29,9 @@ export default {
         duration: '1',
       });
     },
+    Listening(value) {
+      this.msg = value
+    }
   },
 };
 </script>

@@ -1,4 +1,4 @@
-import Vue from 'vue' //引入vue是因为要用到extend()这个方法
+import Vue from 'vue' 
 import Notice from './notice.vue'
 
 Notice.newInstance = (properties) => {
@@ -19,6 +19,7 @@ Notice.newInstance = (properties) => {
 
   const notice = component.$children[0]
   //console.log(notice);
+  console.log(123);
 
   return {
     add(_notice) {

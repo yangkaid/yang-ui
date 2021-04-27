@@ -1,0 +1,31 @@
+@import './common/mixins.scss';
+@import './common//var.scss';
+
+@include b(input) {
+    box-sizing: border-box;
+    border-radius: 4px;
+    border: 1px solid #999;
+    outline: none;
+    font-size: 14px;
+    &:active,
+    &:focus {
+        border-color: #555;
+        box-shadow: 0 0 4px #555;
+    }
+
+    &-small {
+        height: 26px;
+        line-height: 26px;
+        padding: 4px 8px;
+    }
+    &-default {
+        height: 36px;
+        line-height: 36px;
+        padding: 7px 10px;
+    }
+    &-large {
+        height: 46px;
+        line-height: 46px;
+        padding: 7px 10px;
+    }
+}
