@@ -1,15 +1,13 @@
 @import "common/var";
-@import "mixins/mixins";
+@import "common/mixins";
 
 @include b(form-item) {
 
-  &-label {
-    &-required {
+  &-label-required {
       &:before {
         content: "*";
         color: red;
       }
-    }
   }
 
   &-error {

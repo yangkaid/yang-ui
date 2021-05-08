@@ -15,15 +15,17 @@
 <script>
 import Emitter from "../../mixins/emitter";
 export default {
+  name: 'ItemInput',
   inject: ["form"],
   mixins: [Emitter],
   props: {
     label: {
-      type: "String",
+      type: String,
       default: "",
     },
     prop: {
-      type: "String",
+      type: String,
+      default: ""
     },
   },
   data() {
@@ -39,6 +41,7 @@ export default {
     },
   },
   mounted() {
+    console.log(this.form);
     if (this.prop) {
       this.dispatch("YForm", "on-form-item-add", this);
       //初始值不一定是空字符串，所以缓存起来，重置的时候用。
@@ -63,9 +66,7 @@ export default {
     },
     validate(_trigger, cb = () => {}) {
       const rules = this.getCurrentRule();
-
       if (rules.length === 0) return true;
-
       // 使用async validator验证规则
       let desc = {
         [this.prop]: rules,
@@ -100,5 +101,6 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
+@import '../../styles/form-item.scss'
 </style>
